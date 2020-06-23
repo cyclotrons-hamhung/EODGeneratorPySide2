@@ -200,7 +200,7 @@
      <item row="1" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="scratchiesActualLabel">
        <property name="text">
-        <string>Actual</string>
+        <string>Count</string>
        </property>
       </widget>
      </item>
@@ -249,7 +249,7 @@
      <item row="1" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="scratchiesPayActualLabel">
        <property name="text">
-        <string>Actual</string>
+        <string>Lotto</string>
        </property>
       </widget>
      </item>
@@ -298,7 +298,7 @@
      <item row="1" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="lottoPayActualLabel">
        <property name="text">
-        <string>Actual</string>
+        <string>Lotto</string>
        </property>
       </widget>
      </item>
@@ -347,7 +347,7 @@
      <item row="1" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="lottoActualLabel">
        <property name="text">
-        <string>Actual</string>
+        <string>Lotto</string>
        </property>
       </widget>
      </item>
@@ -471,7 +471,7 @@
      <item row="8" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="cashregisterLabel">
        <property name="text">
-        <string>Register</string>
+        <string>Report</string>
        </property>
       </widget>
      </item>

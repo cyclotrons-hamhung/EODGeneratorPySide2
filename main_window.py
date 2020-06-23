@@ -159,7 +159,7 @@ class MainWindow(QObject):
             'cash coins': self.cashCoinsEdit.text(),
             'cash register': self.cashRegisterEdit.text(),
             'eftpos actual': self.eftActualEdit.text(),
-            'eftops register': self.eftRegisterEdit.text(),
+            'eftpos register': self.eftRegisterEdit.text(),
             'epay actual': self.epayActualEdit.text(),
             'epay register': self.epayRegisterEdit.text(),
             'scratchies actual': self.scratchiesActualEdit.text(),
