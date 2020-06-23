@@ -7,7 +7,6 @@ from datetime import datetime
 from event_handlers import Handlers
 
 
-
 class MainWindow(QObject):
     def __init__(self, ui_file, parent=None):
         super(MainWindow, self).__init__(parent)
@@ -149,7 +148,7 @@ class MainWindow(QObject):
         ## create a dictionary with inputted data
         data_dict = {
             'store': self.storeCombo.itemText(self.storeCombo.currentIndex()),
-            'date': self.dateDisplay.text(),
+            'date': datetime.strptime(self.dateDisplay.text(), '%d/%m/%Y'),
             'staff': self.staffEdit.text(),
             'cash aside': self.cashAsideEdit.text(),
             'cash 100s': self.cash100Edit.text(),
@@ -162,10 +161,19 @@ class MainWindow(QObject):
             'eftpos actual': self.eftActualEdit.text(),
             'eftops register': self.eftRegisterEdit.text(),
             'epay actual': self.epayActualEdit.text(),
-            'epay register': self.epayRegisterEdit.text()
+            'epay register': self.epayRegisterEdit.text(),
+            'scratchies actual': self.scratchiesActualEdit.text(),
+            'scratchies register': self.scratchiesRegisterEdit.text(),
+            'scratchies pay actual': self.scratchiesPayActualEdit.text(),
+            'scratchies pay register': self.scratchiesPayRegisterEdit.text(),
+            'lotto pay actual': self.lottoPayActualEdit.text(),
+            'lotto pay register': self.lottoPayRegisterEdit.text(),
+            'lotto actual': self.lottoActualEdit.text(),
+            'lotto register': self.lottoRegisterEdit.text(),
+            'notes': self.notesEdit.toPlainText()
         }
             
-
+        ## call the button handler and pass the dictionary to it
         Handlers.generateButton_handler(self, data_dict)
 
     ## method that's called when the print button is pressed
