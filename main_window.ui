@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>561</width>
-    <height>862</height>
+    <height>898</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -106,13 +106,6 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="eftActualEdit">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="eftRegisterLabel">
        <property name="text">
@@ -133,6 +126,13 @@
        </property>
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Eftpos&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="eftEnterButton">
+       <property name="text">
+        <string>Enter Values</string>
        </property>
       </widget>
      </item>
@@ -197,30 +197,6 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="scratchiesGrid">
-     <item row="1" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="scratchiesActualLabel">
-       <property name="text">
-        <string>Count</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="scratchiesActualEdit">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="scratchiesRegisterLabel">
-       <property name="text">
-        <string>Register</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="scratchiesRegisterEdit"/>
-     </item>
      <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
       <widget class="QLabel" name="scratchiesLabel">
        <property name="maximumSize">
@@ -231,6 +207,30 @@
        </property>
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Scratchies&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="scratchiesRegisterEdit"/>
+     </item>
+     <item row="1" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="scratchiesActualLabel">
+       <property name="text">
+        <string>Count</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="scratchiesRegisterLabel">
+       <property name="text">
+        <string>Register</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="scratchiesActualEdit">
+       <property name="enabled">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -253,13 +253,6 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="scratchiesPayActualEdit">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="scratchiesPayRegisterLabel">
        <property name="text">
@@ -271,7 +264,7 @@
       <widget class="QLineEdit" name="scratchiesPayRegisterEdit"/>
      </item>
      <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
-      <widget class="QLabel" name="scratchiesPayLabel_2">
+      <widget class="QLabel" name="scratchiesPayLabel">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -280,6 +273,13 @@
        </property>
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Scratchie Payouts&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="scratchiesPayEnterButton">
+       <property name="text">
+        <string>Enter Values</string>
        </property>
       </widget>
      </item>
@@ -302,10 +302,16 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="lottoPayActualEdit">
-       <property name="enabled">
-        <bool>true</bool>
+     <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
+      <widget class="QLabel" name="lottoPayLabel">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Lotto Payouts&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -319,16 +325,10 @@
      <item row="2" column="1">
       <widget class="QLineEdit" name="lottoPayRegisterEdit"/>
      </item>
-     <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
-      <widget class="QLabel" name="lottoPayLabel">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>20</height>
-        </size>
-       </property>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="lottoPayEnterButton">
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Lotto Payouts&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>Enter Values</string>
        </property>
       </widget>
      </item>
@@ -344,27 +344,6 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="lottoGrid">
-     <item row="1" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="lottoActualLabel">
-       <property name="text">
-        <string>Lotto</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="lottoActualEdit">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="lottoRegisterLabel">
-       <property name="text">
-        <string>Register</string>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="1">
       <widget class="QLineEdit" name="lottoRegisterEdit"/>
      </item>
@@ -378,6 +357,27 @@
        </property>
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Lotto&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="lottoActualLabel">
+       <property name="text">
+        <string>Lotto</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="lottoRegisterLabel">
+       <property name="text">
+        <string>Register</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="lottoEnterButton">
+       <property name="text">
+        <string>Enter Values</string>
        </property>
       </widget>
      </item>
@@ -604,7 +604,7 @@
      <rect>
       <x>10</x>
       <y>790</y>
-      <width>261</width>
+      <width>541</width>
       <height>36</height>
      </rect>
     </property>
@@ -615,9 +615,9 @@
    <widget class="QPushButton" name="printButton">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>790</y>
-      <width>261</width>
+      <x>10</x>
+      <y>840</y>
+      <width>541</width>
       <height>36</height>
      </rect>
     </property>

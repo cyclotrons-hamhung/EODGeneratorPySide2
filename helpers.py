@@ -8,10 +8,10 @@ class Helpers():
 
     ## method to remove all characters that are not numerals or .
     def char_remover(self, input_string):
-        if input_string != '':
+        try:
             return float(re.sub('[^0-9\.]', '', input_string))
-        else:
-            return None
+        except ValueError as err:
+            return 0
 
     ## method to convert a float to a string and add a $ to the front
     def dollar_adder(self, input_float):
@@ -41,4 +41,3 @@ class Helpers():
     def calc_diff(self, input_1, input_2):
         diff = input_1 - input_2
         return diff
-

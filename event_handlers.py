@@ -1,5 +1,6 @@
 from reportlab.pdfgen import canvas
 from pdfrw import PdfReader, PdfWriter, PageMerge
+import textwrap
 
 from helpers import Helpers as H
 
@@ -8,7 +9,7 @@ class Handlers():
     def __init__(self):
         super(Handlers, self).__init__()
 
-    def generateButton_handler(self, data_dict):
+    def generateButton_handler(self, data_dict, file_path):     
         pdf = canvas.Canvas('eod_template_overlay.pdf')
         pdf.setFont('Courier', 14)
 
@@ -91,7 +92,27 @@ class Handlers():
 
         pdf.drawString(413, 202, H.dollar_adder(self, lotto_pay_actual))
         pdf.drawString(413, 174, H.dollar_adder(self, lotto_pay_register))
-        pdf.drawString(413, 145, H.diff_dollar_adder(self, H.calc_diff(self, scratchie_pay_actual, scratchie_pay_register)))
+        pdf.drawString(413, 145, H.diff_dollar_adder(self, H.calc_diff(self, lotto_pay_actual, lotto_pay_register)))
+
+
+        # write notes section at the bottom of the page
+        text = data_dict['notes']
+        length = 62
+        x_pos = 37
+        y_pos = 110
+        y_offset = 10
+
+        if len(text) > length:
+            wraps = textwrap.wrap(text, length)
+            for x in range(len(wraps)):
+                pdf.drawString(x_pos, y_pos, wraps[x])
+                y_pos -= y_offset
+            y_pos += y_offset  # add back offset after last wrapped line
+        else:
+            pdf.drawString(x_pos, y_pos, text)
+
+
+
 
         pdf.showPage()
         pdf.save()
@@ -104,8 +125,10 @@ class Handlers():
             merger = PageMerge(base_pdf.pages[page])
             merger.add(mark).render()
 
+        print(file_path)
+
         writer = PdfWriter()
-        writer.write('eod_final.pdf', base_pdf)
+        writer.write(file_path[0], base_pdf)
 
     def printButton_handler(self):
         print('Button pressed!')
