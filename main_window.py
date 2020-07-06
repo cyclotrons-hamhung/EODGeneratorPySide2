@@ -13,7 +13,7 @@ from PIL import Image
 from event_handlers import Handlers
 from helpers import Helpers as H
 
-import popplerqt5
+# import popplerqt5
 
 
 class MainWindow(QObject):
