@@ -597,5 +597,7 @@ class MainWindow(QObject):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    form = MainWindow('main_window.ui')
+    window_ui = H.resource_locator(__name__, 'main_window.ui')
+    print(window_ui)
+    form = MainWindow(window_ui)
     sys.exit(app.exec_())
