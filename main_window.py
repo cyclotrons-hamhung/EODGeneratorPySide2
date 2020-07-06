@@ -1,15 +1,19 @@
 import sys
+import os
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtWidgets import QApplication, QDialog, QPushButton, QLineEdit, QComboBox, QToolButton, QTextEdit, QCalendarWidget, QVBoxLayout, QGridLayout, QLabel, QFileDialog
-from PySide2.QtCore import QFile, QObject, Qt
+from PySide2.QtCore import QFile, QObject, Qt, QPoint, QRect
+from PySide2.QtGui import QImage, QPainter
 from PySide2.QtPrintSupport import QPrintDialog, QPrinter
 from datetime import datetime
 from tr import tr
+from pdf2image import convert_from_path
+from PIL import Image
 
 from event_handlers import Handlers
 from helpers import Helpers as H
 
-# import popplerqt5
+import popplerqt5
 
 
 class MainWindow(QObject):
@@ -522,7 +526,7 @@ class MainWindow(QObject):
             file_path = dialog.selectedFiles()
             
         ## call the button handler and pass the dictionary to it
-        Handlers.generateButton_handler(self, data_dict, file_path)
+        Handlers.generateButton_handler(self, data_dict, file_path[0])
 
     ## method that's called when the print button is pressed
     def handle_printButton(self):
@@ -554,16 +558,40 @@ class MainWindow(QObject):
         }
 
         save_path = 'eod_final_toprint.pdf'
+        image_path = 'eod_final_toprint.jpg'
+        work_path = os.getcwd()
+        print(work_path)
 
         Handlers.generateButton_handler(self, data_dict, save_path)
 
-        print_file = Poppler.Document.load(save_path)
+        # printer = QPrinter(QPrinter.HighResolution)
+        printer = QPrinter()
+        printer.setResolution(200)
+        printer.setPaperSize(QPrinter.A4)
+        printer.setFullPage(True)
 
-        printer = QPrinter(QPrinter.HighResolution)
+        # print('Screen resolution: ', QPrinter.ScreenResolution)
+        # print('High resolution: ', QPrinter.HighResolution)
+
         dialog = QPrintDialog(printer)
 
         if dialog.exec_() == QPrintDialog.Accepted:
-            print_file.print_(printer)
+            image = convert_from_path(work_path + '/' + save_path)
+            image[0].save(image_path)
+            qimage = QImage(work_path + '/' + image_path, 'jpg')
+
+            painter = QPainter()
+            painter.begin(printer)
+
+            image_rect = QRect(qimage.rect())
+            paint_rect = QRect(0, 0, painter.device().width(), painter.device().height())
+
+            image_rect.moveCenter(paint_rect.center())
+
+            # painter.drawImage(0, 0, qimage, sw=1, sh=1)
+            painter.drawImage(paint_rect.topLeft(), qimage)
+            painter.end()
+
 
 
 

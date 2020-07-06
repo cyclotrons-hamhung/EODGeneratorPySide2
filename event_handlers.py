@@ -128,7 +128,7 @@ class Handlers():
         print(file_path)
 
         writer = PdfWriter()
-        writer.write(file_path[0], base_pdf)
+        writer.write(file_path, base_pdf)
 
     def printButton_handler(self):
         print('Button pressed!')
