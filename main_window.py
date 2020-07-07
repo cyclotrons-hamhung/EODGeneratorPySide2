@@ -564,9 +564,9 @@ class MainWindow(QObject):
 
         Handlers.generateButton_handler(self, data_dict, save_path)
 
-        # printer = QPrinter(QPrinter.HighResolution)
-        printer = QPrinter()
-        printer.setResolution(200)
+        printer = QPrinter(QPrinter.HighResolution)
+        # printer = QPrinter()
+        # printer.setResolution(200)
         printer.setPaperSize(QPrinter.A4)
         printer.setFullPage(True)
 
@@ -580,15 +580,19 @@ class MainWindow(QObject):
         dialog = QPrintDialog(printer)
 
         if dialog.exec_() == QPrintDialog.Accepted:
-            print('Current Resolution: \t ', printer.resolution())
-            print('Supported Resolutions: \t', printer.supportedResolutions())
-            
+            # print('Current Resolution: \t ', printer.resolution())
+            # print('Supported Resolutions: \t', printer.supportedResolutions())
+
             image = convert_from_path(work_path + '/' + save_path)
             image[0].save(image_path)
             qimage = QImage(work_path + '/' + image_path, 'jpg')
 
             painter = QPainter()
             painter.begin(printer)
+
+            res_factor = 1200 / printer.resolution()
+
+            painter.scale(1 / res_factor, 1 / res_factor)
 
             image_rect = QRect(qimage.rect())
             paint_rect = QRect(0, 0, painter.device().width(), painter.device().height())

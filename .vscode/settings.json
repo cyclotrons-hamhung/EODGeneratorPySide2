@@ -3,6 +3,5 @@
         "pdfrw",
         "popplerqt",
         "toprint"
-    ],
-    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\envs\\eodgen-env\\python.exe"
+    ]
 }
