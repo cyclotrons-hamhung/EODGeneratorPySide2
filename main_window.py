@@ -570,6 +570,8 @@ class MainWindow(QObject):
         printer.setPaperSize(QPrinter.A4)
         printer.setFullPage(True)
 
+        print('Resultion: ', printer.resolution)
+
         # print('Screen resolution: ', QPrinter.ScreenResolution)
         # print('High resolution: ', QPrinter.HighResolution)
 

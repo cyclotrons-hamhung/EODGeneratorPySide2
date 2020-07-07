@@ -3,11 +3,11 @@
 block_cipher = None
 
 
-a = Analysis(['main_window.py'],
+a = Analysis(['main_window.spec'],
              pathex=['E:\\Users\\Connor McHugh\\Documents\\GitHub\\EODGeneratorPySide2'],
              binaries=[],
-             datas=[ ('eod_template.pdf', '.'), ('main_window.ui', '.') ],
-             hiddenimports=['PySide2.QtXml', 'six', 'tr', 'pdfrw', 'pdf2image'],
+             datas=[],
+             hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
              excludes=[],
@@ -21,7 +21,7 @@ exe = EXE(pyz,
           a.scripts,
           [],
           exclude_binaries=True,
-          name='End of Day',
+          name='',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
@@ -34,4 +34,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='main_window')
+               name='')
