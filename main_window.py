@@ -6,7 +6,7 @@ from PySide2.QtCore import QFile, QObject, Qt, QPoint, QRect
 from PySide2.QtGui import QImage, QPainter
 from PySide2.QtPrintSupport import QPrintDialog, QPrinter
 from datetime import datetime
-from tr import tr
+# from tr import tr
 from pdf2image import convert_from_path
 from PIL import Image
 
@@ -560,7 +560,7 @@ class MainWindow(QObject):
         save_path = 'eod_final_toprint.pdf'
         image_path = 'eod_final_toprint.jpg'
         work_path = os.getcwd()
-        print(work_path)
+        # print(work_path)
 
         Handlers.generateButton_handler(self, data_dict, save_path)
 
