@@ -570,7 +570,9 @@ class MainWindow(QObject):
         printer.setPaperSize(QPrinter.A4)
         printer.setFullPage(True)
 
-        print('Resultion: ', printer.resolution)
+        
+
+        # print('Resultion: ', printer.resolution)
 
         # print('Screen resolution: ', QPrinter.ScreenResolution)
         # print('High resolution: ', QPrinter.HighResolution)
@@ -578,6 +580,9 @@ class MainWindow(QObject):
         dialog = QPrintDialog(printer)
 
         if dialog.exec_() == QPrintDialog.Accepted:
+            print('Current Resolution: \t ', printer.resolution())
+            print('Supported Resolutions: \t', printer.supportedResolutions())
+            
             image = convert_from_path(work_path + '/' + save_path)
             image[0].save(image_path)
             qimage = QImage(work_path + '/' + image_path, 'jpg')
