@@ -14,11 +14,11 @@ class Handlers():
         pdf.setFont('Courier', 14)
 
         # write general information strings
-        pdf.drawString(90, 740, data_dict['store'])
-        pdf.drawString(90, 711, H.day_of_week(
+        pdf.drawString(90, 742, data_dict['store'])
+        pdf.drawString(90, 713, H.day_of_week(
             self, data_dict['date'].weekday()))
-        pdf.drawString(90, 683, data_dict['date'].strftime('%d/%m/%Y'))
-        pdf.drawString(90, 655, data_dict['staff'])
+        pdf.drawString(90, 685, data_dict['date'].strftime('%d/%m/%Y'))
+        pdf.drawString(90, 657, data_dict['staff'])
 
         # array of cash values
         cash_arr = [H.char_remover(self, data_dict['cash aside']), H.char_remover(self, data_dict['cash 100s']), H.char_remover(self, data_dict['cash 50s']), H.char_remover(
@@ -34,76 +34,76 @@ class Handlers():
             total -= H.char_remover(self, data_dict['cash payouts'])
 
         # write cash strings
-        pdf.drawString(142, 570, H.dollar_adder(self, H.char_remover(self, data_dict['cash payouts'])))
-        pdf.drawString(142, 542, H.dollar_adder(self, H.char_remover(self, data_dict['cash aside'])))
-        pdf.drawString(142, 514, H.dollar_adder(self, H.char_remover(self, data_dict['cash 100s'])))
-        pdf.drawString(142, 485, H.dollar_adder(self, H.char_remover(self, data_dict['cash 50s'])))
-        pdf.drawString(142, 456, H.dollar_adder(self, H.char_remover(self, data_dict['cash 20s'])))
-        pdf.drawString(142, 429, H.dollar_adder(self, H.char_remover(self, data_dict['cash 10s'])))
-        pdf.drawString(142, 401, H.dollar_adder(self, H.char_remover(self, data_dict['cash 5s'])))
-        pdf.drawString(142, 372, H.dollar_adder(self, H.char_remover(self, data_dict['cash coins'])))
-        pdf.drawString(142, 344, H.dollar_adder(self, total))
-        pdf.drawString(142, 315, H.dollar_adder(self, H.char_remover(self, data_dict['cash register'])))
-        pdf.drawString(142, 287, H.diff_dollar_adder(self, H.calc_diff(self, total, H.char_remover(self, data_dict['cash register']))))
+        pdf.drawString(153, 577, H.dollar_adder(self, H.char_remover(self, data_dict['cash payouts'])))
+        pdf.drawString(153, 550, H.dollar_adder(self, H.char_remover(self, data_dict['cash aside'])))
+        pdf.drawString(153, 523, H.dollar_adder(self, H.char_remover(self, data_dict['cash 100s'])))
+        pdf.drawString(153, 495, H.dollar_adder(self, H.char_remover(self, data_dict['cash 50s'])))
+        pdf.drawString(153, 467, H.dollar_adder(self, H.char_remover(self, data_dict['cash 20s'])))
+        pdf.drawString(153, 440, H.dollar_adder(self, H.char_remover(self, data_dict['cash 10s'])))
+        pdf.drawString(153, 413, H.dollar_adder(self, H.char_remover(self, data_dict['cash 5s'])))
+        pdf.drawString(153, 385, H.dollar_adder(self, H.char_remover(self, data_dict['cash coins'])))
+        pdf.drawString(153, 358, H.dollar_adder(self, total))
+        pdf.drawString(153, 330, H.dollar_adder(self, H.char_remover(self, data_dict['cash register'])))
+        pdf.drawString(153, 303, H.diff_dollar_adder(self, H.calc_diff(self, total, H.char_remover(self, data_dict['cash register']))))
 
 
         # write lotto strings
         lotto_actual = H.char_remover(self, data_dict['lotto actual'])
         lotto_register = H.char_remover(self, data_dict['lotto register'])
 
-        pdf.drawString(142, 202, H.dollar_adder(self, lotto_actual))
-        pdf.drawString(142, 174, H.dollar_adder(self, lotto_register))
-        pdf.drawString(142, 145, H.diff_dollar_adder(self, H.calc_diff(self, lotto_register, lotto_actual)))
+        pdf.drawString(153, 220, H.dollar_adder(self, lotto_actual))
+        pdf.drawString(153, 193, H.dollar_adder(self, lotto_register))
+        pdf.drawString(153, 166, H.diff_dollar_adder(self, H.calc_diff(self, lotto_register, lotto_actual)))
 
 
         # write eftpos strings
         eftpos_actual = H.char_remover(self, data_dict['eftpos actual'])
         eftpos_register = H.char_remover(self, data_dict['eftpos register'])
 
-        pdf.drawString(413, 713, H.dollar_adder(self, eftpos_actual))
-        pdf.drawString(413, 684, H.dollar_adder(self, eftpos_register))
-        pdf.drawString(413, 655, H.diff_dollar_adder(self, H.calc_diff(self, eftpos_actual, eftpos_register)))
+        pdf.drawString(429, 715, H.dollar_adder(self, eftpos_actual))
+        pdf.drawString(429, 688, H.dollar_adder(self, eftpos_register))
+        pdf.drawString(429, 661, H.diff_dollar_adder(self, H.calc_diff(self, eftpos_actual, eftpos_register)))
 
 
         # write epay strings
         epay_actual = H.char_remover(self, data_dict['epay actual'])
         epay_register = H.char_remover(self, data_dict['epay register'])
 
-        pdf.drawString(413, 570, H.dollar_adder(self, epay_actual))
-        pdf.drawString(413, 542, H.dollar_adder(self, epay_register))
-        pdf.drawString(413, 514, H.diff_dollar_adder(self, H.calc_diff(self, epay_register, epay_actual)))
+        pdf.drawString(429, 577, H.dollar_adder(self, epay_actual))
+        pdf.drawString(429, 550, H.dollar_adder(self, epay_register))
+        pdf.drawString(429, 523, H.diff_dollar_adder(self, H.calc_diff(self, epay_register, epay_actual)))
 
 
         # write scratchie strings
         scratchie_actual = H.char_remover(self, data_dict['scratchies actual'])
         scratchie_register = H.char_remover(self, data_dict['scratchies register'])
 
-        pdf.drawString(413, 429, H.diff_dollar_adder(self, H.calc_diff(self, scratchie_actual, scratchie_register)))
+        pdf.drawString(429, 440, H.diff_dollar_adder(self, H.calc_diff(self, scratchie_actual, scratchie_register)))
 
 
         # write scratchie payout strings
         scratchie_pay_actual = H.char_remover(self, data_dict['scratchies pay actual'])
         scratchie_pay_register = H.char_remover(self, data_dict['scratchies pay register'])
 
-        pdf.drawString(413, 344, H.dollar_adder(self, scratchie_pay_actual))
-        pdf.drawString(413, 315, H.dollar_adder(self, scratchie_pay_register))
-        pdf.drawString(413, 287, H.diff_dollar_adder(self, H.calc_diff(self, scratchie_pay_actual, scratchie_pay_register)))
+        pdf.drawString(429, 358, H.dollar_adder(self, scratchie_pay_actual))
+        pdf.drawString(429, 330, H.dollar_adder(self, scratchie_pay_register))
+        pdf.drawString(429, 303, H.diff_dollar_adder(self, H.calc_diff(self, scratchie_pay_actual, scratchie_pay_register)))
 
 
         # write lotto payout strings
         lotto_pay_actual = H.char_remover(self, data_dict['lotto pay actual'])
         lotto_pay_register = H.char_remover(self, data_dict['lotto pay register'])
 
-        pdf.drawString(413, 202, H.dollar_adder(self, lotto_pay_actual))
-        pdf.drawString(413, 174, H.dollar_adder(self, lotto_pay_register))
-        pdf.drawString(413, 145, H.diff_dollar_adder(self, H.calc_diff(self, lotto_pay_actual, lotto_pay_register)))
+        pdf.drawString(429, 220, H.dollar_adder(self, lotto_pay_actual))
+        pdf.drawString(429, 193, H.dollar_adder(self, lotto_pay_register))
+        pdf.drawString(429, 166, H.diff_dollar_adder(self, H.calc_diff(self, lotto_pay_actual, lotto_pay_register)))
 
 
         # write notes section at the bottom of the page
         text = data_dict['notes']
         length = 62
         x_pos = 37
-        y_pos = 110
+        y_pos = 135
         y_offset = 10
 
         if len(text) > length:
