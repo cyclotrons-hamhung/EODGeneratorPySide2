@@ -3,7 +3,7 @@ import os
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtWidgets import QApplication, QDialog, QPushButton, QLineEdit, QComboBox, QToolButton, QTextEdit, QCalendarWidget, QVBoxLayout, QGridLayout, QLabel, QFileDialog
 from PySide2.QtCore import QFile, QObject, Qt, QPoint, QRect
-from PySide2.QtGui import QImage, QPainter
+from PySide2.QtGui import QImage, QPainter, QIcon
 from PySide2.QtPrintSupport import QPrintDialog, QPrinter
 from datetime import datetime
 # from tr import tr
@@ -17,8 +17,8 @@ from helpers import Helpers as H
 
 
 class MainWindow(QObject):
-    global global_dict
-    global_dict = {
+    global global_temp_dict
+    global_temp_dict = {
         'eftpos 1': '',
         'eftpos 2': '',
         'eftpos 3': '',
@@ -29,6 +29,35 @@ class MainWindow(QObject):
         'gross sales': '',
         'instants comm': '',
         'instants net': ''
+    }
+
+    global global_data_dict
+    global_data_dict = {
+            'store': '',
+            'date': '',
+            'staff': '',
+            'cash payouts': '',
+            'cash aside': '',
+            'cash 100s': '',
+            'cash 50s': '',
+            'cash 20s': '',
+            'cash 10s': '',
+            'cash 5s': '',
+            'cash coins': '',
+            'cash register': '',
+            'eftpos actual': '',
+            'eftpos register': '',
+            'epay actual': '',
+            'epay register': '',
+            'scratchies actual': '',
+            'scratchies register': '',
+            'scratchies pay actual': '',
+            'scratchies pay register': '',
+            'lotto pay actual': '',
+            'lotto pay register': '',
+            'lotto actual': '',
+            'lotto register': '',
+            'notes': ''
     }
 
     def __init__(self, ui_file, parent=None):
@@ -44,6 +73,7 @@ class MainWindow(QObject):
 
         ## close the ui file
         ui_file.close()
+
         
         ## connect ui buttons to variables
             # date select button
@@ -83,6 +113,8 @@ class MainWindow(QObject):
         self.dateDisplay.setText(datetime.today().strftime('%d/%m/%Y'))
             # staff input box
         self.staffEdit = self.window.findChild(QLineEdit, 'staffEdit')
+            # cash payouts input box
+        self.cashPayoutsEdit = self.window.findChild(QLineEdit, 'cashPayoutsEdit')
             # cash put aside input box
         self.cashAsideEdit = self.window.findChild(QLineEdit, 'cashAsideEdit')
             # cash 100's input box
@@ -130,10 +162,10 @@ class MainWindow(QObject):
             machine_3_value = H.char_remover(self, machine_3.text())
             machine_prev_value = H.char_remover(self, machine_prev.text())
 
-            global_dict['eftpos 1'] = H.dollar_adder(self, machine_1_value)
-            global_dict['eftpos 2'] = H.dollar_adder(self, machine_2_value)
-            global_dict['eftpos 3'] = H.dollar_adder(self, machine_3_value)
-            global_dict['eftpos prev'] = H.dollar_adder(self, machine_prev_value)
+            global_temp_dict['eftpos 1'] = H.dollar_adder(self, machine_1_value)
+            global_temp_dict['eftpos 2'] = H.dollar_adder(self, machine_2_value)
+            global_temp_dict['eftpos 3'] = H.dollar_adder(self, machine_3_value)
+            global_temp_dict['eftpos prev'] = H.dollar_adder(self, machine_prev_value)
 
             eft_arr = [machine_1_value, machine_2_value, machine_3_value]
 
@@ -184,10 +216,10 @@ class MainWindow(QObject):
         cancelButton.clicked.connect(handle_cancelButton)
 
         ## initialise values
-        machine_1.setText(global_dict['eftpos 1'])
-        machine_2.setText(global_dict['eftpos 2'])
-        machine_3.setText(global_dict['eftpos 3'])
-        machine_prev.setText(global_dict['eftpos prev'])
+        machine_1.setText(global_temp_dict['eftpos 1'])
+        machine_2.setText(global_temp_dict['eftpos 2'])
+        machine_3.setText(global_temp_dict['eftpos 3'])
+        machine_prev.setText(global_temp_dict['eftpos prev'])
 
         ## initialise the layout manager
         layout = QGridLayout()
@@ -218,8 +250,8 @@ class MainWindow(QObject):
             instants_cash_value = H.char_remover(self, instants_cash.text())
             free_instants_value = H.char_remover(self, free_instants.text())
 
-            global_dict['instants cash'] = H.dollar_adder(self, instants_cash_value)
-            global_dict['free instants'] = H.dollar_adder(self, free_instants_value)
+            global_temp_dict['instants cash'] = H.dollar_adder(self, instants_cash_value)
+            global_temp_dict['free instants'] = H.dollar_adder(self, free_instants_value)
 
             scratchies_pay_arr = [instants_cash_value, free_instants_value]
 
@@ -260,8 +292,8 @@ class MainWindow(QObject):
         cancelButton.clicked.connect(handle_cancelButton)
 
         ## initialise values
-        instants_cash.setText(global_dict['instants cash'])
-        free_instants.setText(global_dict['free instants'])
+        instants_cash.setText(global_temp_dict['instants cash'])
+        free_instants.setText(global_temp_dict['free instants'])
 
         ## initialise the layout manager
         layout = QGridLayout()
@@ -288,8 +320,8 @@ class MainWindow(QObject):
             instants_cash_value = H.char_remover(self, instants_cash.text())
             prizes_paid_value = H.char_remover(self, prizes_paid.text())
 
-            global_dict['instants cash'] = H.dollar_adder(self, instants_cash_value)
-            global_dict['total prizes'] = H.dollar_adder(self, prizes_paid_value)
+            global_temp_dict['instants cash'] = H.dollar_adder(self, instants_cash_value)
+            global_temp_dict['total prizes'] = H.dollar_adder(self, prizes_paid_value)
 
             if (prizes_paid_value and instants_cash_value) != None:
                 lotto_pay_total = prizes_paid_value - instants_cash_value
@@ -329,8 +361,8 @@ class MainWindow(QObject):
         cancelButton.clicked.connect(handle_cancelButton)
 
         ## initialise values
-        instants_cash.setText(global_dict['instants cash'])
-        prizes_paid.setText(global_dict['total prizes'])
+        instants_cash.setText(global_temp_dict['instants cash'])
+        prizes_paid.setText(global_temp_dict['total prizes'])
 
         ## initialise the layout manager
         layout = QGridLayout()
@@ -360,9 +392,9 @@ class MainWindow(QObject):
             instants_comm_value = H.char_remover(self, instants_comm.text())
             instants_net_value = H.char_remover(self, instants_net.text())
 
-            global_dict['gross sales'] = H.dollar_adder(self, gross_sales_value)
-            global_dict['instants comm'] = H.dollar_adder(self, instants_comm_value)
-            global_dict['instants net'] = H.dollar_adder(self, instants_net_value)
+            global_temp_dict['gross sales'] = H.dollar_adder(self, gross_sales_value)
+            global_temp_dict['instants comm'] = H.dollar_adder(self, instants_comm_value)
+            global_temp_dict['instants net'] = H.dollar_adder(self, instants_net_value)
 
             if (gross_sales_value and instants_comm_value and instants_net_value) != None:
                 lotto_total = gross_sales_value - instants_comm_value - instants_net_value
@@ -405,9 +437,9 @@ class MainWindow(QObject):
         cancelButton.clicked.connect(handle_cancelButton)
 
         ## initialise values
-        gross_sales.setText(global_dict['gross sales'])
-        instants_comm.setText(global_dict['instants comm'])
-        instants_net.setText(global_dict['instants net'])
+        gross_sales.setText(global_temp_dict['gross sales'])
+        instants_comm.setText(global_temp_dict['instants comm'])
+        instants_net.setText(global_temp_dict['instants net'])
 
         ## initialise the layout manager
         layout = QGridLayout()
@@ -487,33 +519,32 @@ class MainWindow(QObject):
 
     ## method that's called when the generate button is pressed
     def handle_generateButton(self):
-        ## create a dictionary with inputted data
-        data_dict = {
-            'store': self.storeCombo.itemText(self.storeCombo.currentIndex()),
-            'date': datetime.strptime(self.dateDisplay.text(), '%d/%m/%Y'),
-            'staff': self.staffEdit.text(),
-            'cash aside': self.cashAsideEdit.text(),
-            'cash 100s': self.cash100Edit.text(),
-            'cash 50s': self.cash50Edit.text(),
-            'cash 20s': self.cash20Edit.text(),
-            'cash 10s': self.cash10Edit.text(),
-            'cash 5s': self.cash5Edit.text(),
-            'cash coins': self.cashCoinsEdit.text(),
-            'cash register': self.cashRegisterEdit.text(),
-            'eftpos actual': self.eftEnterButton.text(),
-            'eftpos register': self.eftRegisterEdit.text(),
-            'epay actual': self.epayActualEdit.text(),
-            'epay register': self.epayRegisterEdit.text(),
-            'scratchies actual': self.scratchiesActualEdit.text(),
-            'scratchies register': self.scratchiesRegisterEdit.text(),
-            'scratchies pay actual': self.scratchiesPayEnterButton.text(),
-            'scratchies pay register': self.scratchiesPayRegisterEdit.text(),
-            'lotto pay actual': self.lottoPayEnterButton.text(),
-            'lotto pay register': self.lottoPayRegisterEdit.text(),
-            'lotto actual': self.lottoEnterButton.text(),
-            'lotto register': self.lottoRegisterEdit.text(),
-            'notes': self.notesEdit.toPlainText()
-        }
+        ## update the data in the dictionary
+        global_data_dict['store'] = self.storeCombo.itemText(self.storeCombo.currentIndex())
+        global_data_dict['date'] = datetime.strptime(self.dateDisplay.text(), '%d/%m/%Y')
+        global_data_dict['staff'] = self.staffEdit.text()
+        global_data_dict['cash payouts'] = self.cashPayoutsEdit.text()
+        global_data_dict['cash aside'] = self.cashAsideEdit.text()
+        global_data_dict['cash 100s'] = self.cash100Edit.text()
+        global_data_dict['cash 50s'] = self.cash50Edit.text()
+        global_data_dict['cash 20s'] = self.cash20Edit.text()
+        global_data_dict['cash 10s'] = self.cash10Edit.text()
+        global_data_dict['cash 5s'] = self.cash5Edit.text()
+        global_data_dict['cash coins'] = self.cashCoinsEdit.text()
+        global_data_dict['cash register'] = self.cashRegisterEdit.text()
+        global_data_dict['eftpos actual'] = self.eftEnterButton.text()
+        global_data_dict['eftpos register'] = self.eftRegisterEdit.text()
+        global_data_dict['epay actual'] = self.epayActualEdit.text()
+        global_data_dict['epay register'] = self.epayRegisterEdit.text()
+        global_data_dict['scratchies actual'] = self.scratchiesActualEdit.text()
+        global_data_dict['scratchies register'] = self.scratchiesRegisterEdit.text()
+        global_data_dict['scratchies pay actual'] = self.scratchiesPayEnterButton.text()
+        global_data_dict['scratchies pay register'] = self.scratchiesPayRegisterEdit.text()
+        global_data_dict['lotto pay actual'] = self.lottoPayEnterButton.text()
+        global_data_dict['lotto pay register'] = self.lottoPayRegisterEdit.text()
+        global_data_dict['lotto actual'] = self.lottoEnterButton.text()
+        global_data_dict['lotto register'] = self.lottoRegisterEdit.text()
+        global_data_dict['notes'] = self.notesEdit.toPlainText()
 
         ## bring up save dialog
         dialog = QFileDialog()
@@ -526,47 +557,48 @@ class MainWindow(QObject):
             file_path = dialog.selectedFiles()
             
         ## call the button handler and pass the dictionary to it
-        Handlers.generateButton_handler(self, data_dict, file_path[0])
+        Handlers.generateButton_handler(self, global_data_dict, file_path[0])
 
     ## method that's called when the print button is pressed
     def handle_printButton(self):
-        data_dict = {
-            'store': self.storeCombo.itemText(self.storeCombo.currentIndex()),
-            'date': datetime.strptime(self.dateDisplay.text(), '%d/%m/%Y'),
-            'staff': self.staffEdit.text(),
-            'cash aside': self.cashAsideEdit.text(),
-            'cash 100s': self.cash100Edit.text(),
-            'cash 50s': self.cash50Edit.text(),
-            'cash 20s': self.cash20Edit.text(),
-            'cash 10s': self.cash10Edit.text(),
-            'cash 5s': self.cash5Edit.text(),
-            'cash coins': self.cashCoinsEdit.text(),
-            'cash register': self.cashRegisterEdit.text(),
-            'eftpos actual': self.eftEnterButton.text(),
-            'eftpos register': self.eftRegisterEdit.text(),
-            'epay actual': self.epayActualEdit.text(),
-            'epay register': self.epayRegisterEdit.text(),
-            'scratchies actual': self.scratchiesActualEdit.text(),
-            'scratchies register': self.scratchiesRegisterEdit.text(),
-            'scratchies pay actual': self.scratchiesPayEnterButton.text(),
-            'scratchies pay register': self.scratchiesPayRegisterEdit.text(),
-            'lotto pay actual': self.lottoPayEnterButton.text(),
-            'lotto pay register': self.lottoPayRegisterEdit.text(),
-            'lotto actual': self.lottoEnterButton.text(),
-            'lotto register': self.lottoRegisterEdit.text(),
-            'notes': self.notesEdit.toPlainText()
-        }
+        ## update the data in the dictionary
+        global_data_dict['store'] = self.storeCombo.itemText(self.storeCombo.currentIndex())
+        global_data_dict['date'] = datetime.strptime(self.dateDisplay.text(), '%d/%m/%Y')
+        global_data_dict['staff'] = self.staffEdit.text()
+        global_data_dict['cash payouts'] = self.cashPayoutsEdit.text()
+        global_data_dict['cash aside'] = self.cashAsideEdit.text()
+        global_data_dict['cash 100s'] = self.cash100Edit.text()
+        global_data_dict['cash 50s'] = self.cash50Edit.text()
+        global_data_dict['cash 20s'] = self.cash20Edit.text()
+        global_data_dict['cash 10s'] = self.cash10Edit.text()
+        global_data_dict['cash 5s'] = self.cash5Edit.text()
+        global_data_dict['cash coins'] = self.cashCoinsEdit.text()
+        global_data_dict['cash register'] = self.cashRegisterEdit.text()
+        global_data_dict['eftpos actual'] = self.eftEnterButton.text()
+        global_data_dict['eftpos register'] = self.eftRegisterEdit.text()
+        global_data_dict['epay actual'] = self.epayActualEdit.text()
+        global_data_dict['epay register'] = self.epayRegisterEdit.text()
+        global_data_dict['scratchies actual'] = self.scratchiesActualEdit.text()
+        global_data_dict['scratchies register'] = self.scratchiesRegisterEdit.text()
+        global_data_dict['scratchies pay actual'] = self.scratchiesPayEnterButton.text()
+        global_data_dict['scratchies pay register'] = self.scratchiesPayRegisterEdit.text()
+        global_data_dict['lotto pay actual'] = self.lottoPayEnterButton.text()
+        global_data_dict['lotto pay register'] = self.lottoPayRegisterEdit.text()
+        global_data_dict['lotto actual'] = self.lottoEnterButton.text()
+        global_data_dict['lotto register'] = self.lottoRegisterEdit.text()
+        global_data_dict['notes'] = self.notesEdit.toPlainText()
 
         save_path = 'eod_final_toprint.pdf'
         image_path = 'eod_final_toprint.jpg'
         work_path = os.getcwd()
+        dpi_to_use = 200
         # print(work_path)
 
-        Handlers.generateButton_handler(self, data_dict, save_path)
+        Handlers.generateButton_handler(self, global_data_dict, save_path)
 
-        printer = QPrinter(QPrinter.HighResolution)
-        # printer = QPrinter()
-        # printer.setResolution(200)
+        # printer = QPrinter(QPrinter.HighResolution)
+        printer = QPrinter()
+        printer.setResolution(dpi_to_use)
         printer.setPaperSize(QPrinter.A4)
         printer.setFullPage(True)
 
@@ -590,7 +622,7 @@ class MainWindow(QObject):
             painter = QPainter()
             painter.begin(printer)
 
-            res_factor = 1200 / printer.resolution()
+            res_factor = dpi_to_use / printer.resolution()
 
             painter.scale(1 / res_factor, 1 / res_factor)
 
@@ -605,9 +637,9 @@ class MainWindow(QObject):
 
 
 
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    app.setWindowIcon(QIcon('eod_icon.ico'))
     window_ui = H.resource_locator(__name__, 'main_window.ui')
     print(window_ui)
     form = MainWindow(window_ui)
