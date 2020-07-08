@@ -3,5 +3,6 @@
         "pdfrw",
         "popplerqt",
         "toprint"
-    ]
+    ],
+    "python.pythonPath": "C:\\Python38-32\\python.exe"
 }

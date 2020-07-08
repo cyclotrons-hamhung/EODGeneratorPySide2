@@ -1,6 +1,20 @@
-import re, os, sys
+import re, os, sys, ghostscript, locale
 
 class Helpers():
+
+    def pdf2jpeg(self, pdf_input_path, jpeg_output_path):
+        args = ["pdf2jpeg", # actual value doesn't matter
+                "-dNOPAUSE",
+                "-sDEVICE=jpeg",
+                "-r144",
+                "-sOutputFile=" + jpeg_output_path,
+                pdf_input_path]
+
+        encoding = locale.getpreferredencoding()
+        args = [a.encode(encoding) for a in args]
+
+        ghostscript.Ghostscript(*args)
+
     ## method to get the absolute path to a resource
     def resource_locator(self, relative_path):
         try:

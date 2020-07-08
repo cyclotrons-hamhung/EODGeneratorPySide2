@@ -1,5 +1,4 @@
-import sys
-import os
+import sys, os, subprocess, time
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtWidgets import QApplication, QDialog, QPushButton, QLineEdit, QComboBox, QToolButton, QTextEdit, QCalendarWidget, QVBoxLayout, QGridLayout, QLabel, QFileDialog
 from PySide2.QtCore import QFile, QObject, Qt, QPoint, QRect
@@ -7,7 +6,8 @@ from PySide2.QtGui import QImage, QPainter, QIcon
 from PySide2.QtPrintSupport import QPrintDialog, QPrinter
 from datetime import datetime
 # from tr import tr
-from pdf2image import convert_from_path
+# from pdf2image import convert_from_path
+# import ghostscript
 from PIL import Image
 
 from event_handlers import Handlers
@@ -591,7 +591,7 @@ class MainWindow(QObject):
         save_path = 'eod_final_toprint.pdf'
         image_path = 'eod_final_toprint.jpg'
         work_path = os.getcwd()
-        dpi_to_use = 200
+        dpi_to_use = 150
         # print(work_path)
 
         Handlers.generateButton_handler(self, global_data_dict, save_path)
@@ -615,8 +615,13 @@ class MainWindow(QObject):
             # print('Current Resolution: \t ', printer.resolution())
             # print('Supported Resolutions: \t', printer.supportedResolutions())
 
-            image = convert_from_path(work_path + '/' + save_path)
-            image[0].save(image_path)
+            # image = convert_from_path(work_path + '/' + save_path)
+            # image[0].save(image_path)
+
+            # pdf_file = open(work_path + '\\' + save_path, 'r+')
+            # img_file = open(work_path + '\\' + image_path, 'r+')
+
+            H.pdf2jpeg(self, work_path + '/' + save_path, work_path + '/' + image_path)
             qimage = QImage(work_path + '/' + image_path, 'jpg')
 
             painter = QPainter()
@@ -634,6 +639,30 @@ class MainWindow(QObject):
             # painter.drawImage(0, 0, qimage, sw=1, sh=1)
             painter.drawImage(paint_rect.topLeft(), qimage)
             painter.end()
+
+        try:
+            os.remove(work_path + '/' + image_path)
+        except OSError:
+            # print('OSERROR 1')
+            pass
+
+        try:
+            os.remove(work_path + '/' + save_path)
+        except OSError:
+            # print('OSERROR 2')
+            pass
+
+        try:
+            os.remove(work_path + '/eod_template_overlay.pdf')
+        except OSError:
+            # print('OSERROR 3')
+            pass
+
+        try:
+            os.remove(work_path + '/eod_final_toprint.pdf')
+        except OSError:
+            # print('OSERROR 4')
+            pass
 
 
 
