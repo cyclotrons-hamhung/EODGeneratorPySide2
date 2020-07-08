@@ -10,8 +10,17 @@
     <height>898</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>End of Day: Staff</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="gridLayoutWidget_3">
@@ -50,6 +59,9 @@
      </item>
      <item row="0" column="1" colspan="2">
       <widget class="QComboBox" name="storeCombo">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <item>
         <property name="text">
          <string/>
@@ -82,6 +94,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -109,7 +124,7 @@
      <item row="2" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="eftRegisterLabel">
        <property name="text">
-        <string>Register</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Register&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -131,6 +146,9 @@
      </item>
      <item row="1" column="1">
       <widget class="QPushButton" name="eftEnterButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Enter Values</string>
        </property>
@@ -148,6 +166,29 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="epayGrid">
+     <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
+      <widget class="QLabel" name="epayLabel">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Epay&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="epayRegisterLabel">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Register&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="epayRegisterEdit"/>
+     </item>
      <item row="1" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="epayActualLabel">
        <property name="text">
@@ -159,29 +200,6 @@
       <widget class="QLineEdit" name="epayActualEdit">
        <property name="enabled">
         <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="epayRegisterLabel">
-       <property name="text">
-        <string>Register</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="epayRegisterEdit"/>
-     </item>
-     <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
-      <widget class="QLabel" name="epayLabel">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Epay&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -223,7 +241,7 @@
      <item row="2" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="scratchiesRegisterLabel">
        <property name="text">
-        <string>Register</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Register&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -256,7 +274,7 @@
      <item row="2" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="scratchiesPayRegisterLabel">
        <property name="text">
-        <string>Register</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Register&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -278,6 +296,9 @@
      </item>
      <item row="1" column="1">
       <widget class="QPushButton" name="scratchiesPayEnterButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Enter Values</string>
        </property>
@@ -318,7 +339,7 @@
      <item row="2" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="lottoPayRegisterLabel">
        <property name="text">
-        <string>Register</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Register&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -327,6 +348,9 @@
      </item>
      <item row="1" column="1">
       <widget class="QPushButton" name="lottoPayEnterButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Enter Values</string>
        </property>
@@ -370,12 +394,15 @@
      <item row="2" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="lottoRegisterLabel">
        <property name="text">
-        <string>Register</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Register&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
       <widget class="QPushButton" name="lottoEnterButton">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>Enter Values</string>
        </property>
@@ -387,42 +414,62 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>150</y>
+      <y>145</y>
       <width>261</width>
-      <height>361</height>
+      <height>370</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="cashGrid">
-     <item row="2" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="cash100Label">
-       <property name="text">
-        <string>$100</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="cash100Edit"/>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="cashCoinsEdit"/>
      </item>
      <item row="7" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="cashCoinsLabel">
-       <property name="text">
-        <string>Coins</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="cash5Label">
        <property name="text">
         <string>$5</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="cashAsideLabel">
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="cash5Edit"/>
+     </item>
+     <item row="4" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="cash50Label">
        <property name="text">
-        <string>Put Aside</string>
+        <string>$50</string>
        </property>
       </widget>
+     </item>
+     <item row="3" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="cash100Label">
+       <property name="text">
+        <string>$100</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="cashregisterLabel">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Register&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="cash20Label">
+       <property name="text">
+        <string>$20</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="cash10Label">
+       <property name="text">
+        <string>$10</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="cash100Edit"/>
      </item>
      <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
       <widget class="QLabel" name="cashLabel">
@@ -440,58 +487,48 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="cash50Edit"/>
+     </item>
+     <item row="8" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="cashCoinsLabel">
+       <property name="text">
+        <string>Coins</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
       <widget class="QLineEdit" name="cashAsideEdit">
        <property name="enabled">
         <bool>true</bool>
        </property>
       </widget>
      </item>
-     <item row="3" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="cash50Label">
-       <property name="text">
-        <string>$50</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="cash20Label">
-       <property name="text">
-        <string>$20</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="cash10Label">
-       <property name="text">
-        <string>$10</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="cashregisterLabel">
-       <property name="text">
-        <string>Report</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="cash50Edit"/>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="cash20Edit"/>
-     </item>
-     <item row="5" column="1">
+     <item row="6" column="1">
       <widget class="QLineEdit" name="cash10Edit"/>
      </item>
-     <item row="6" column="1">
-      <widget class="QLineEdit" name="cash5Edit"/>
+     <item row="2" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="cashAsideLabel">
+       <property name="text">
+        <string>Put Aside</string>
+       </property>
+      </widget>
      </item>
-     <item row="7" column="1">
-      <widget class="QLineEdit" name="cashCoinsEdit"/>
-     </item>
-     <item row="8" column="1">
+     <item row="9" column="1">
       <widget class="QLineEdit" name="cashRegisterEdit"/>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="cash20Edit"/>
+     </item>
+     <item row="1" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="cashPayoutsLabel">
+       <property name="text">
+        <string>Payouts Used</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="cashPayoutsEdit"/>
      </item>
     </layout>
    </widget>
@@ -608,6 +645,9 @@
       <height>36</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="text">
      <string>Generate EOD File</string>
     </property>
@@ -620,6 +660,9 @@
       <width>541</width>
       <height>36</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="text">
      <string>Print EOD</string>
@@ -667,7 +710,7 @@
      <x>0</x>
      <y>0</y>
      <width>561</width>
-     <height>29</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

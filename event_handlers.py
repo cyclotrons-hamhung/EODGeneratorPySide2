@@ -30,7 +30,11 @@ class Handlers():
             if value != None:
                 total += value
 
+        if data_dict['cash payouts'] != None:
+            total -= H.char_remover(self, data_dict['cash payouts'])
+
         # write cash strings
+        pdf.drawString(142, 570, H.dollar_adder(self, H.char_remover(self, data_dict['cash payouts'])))
         pdf.drawString(142, 542, H.dollar_adder(self, H.char_remover(self, data_dict['cash aside'])))
         pdf.drawString(142, 514, H.dollar_adder(self, H.char_remover(self, data_dict['cash 100s'])))
         pdf.drawString(142, 485, H.dollar_adder(self, H.char_remover(self, data_dict['cash 50s'])))
