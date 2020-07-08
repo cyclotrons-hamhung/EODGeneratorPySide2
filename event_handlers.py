@@ -9,7 +9,7 @@ class Handlers():
     def __init__(self):
         super(Handlers, self).__init__()
 
-    def generateButton_handler(self, data_dict, file_path):     
+    def generateButton_handler(self, data_dict, file_path):
         pdf = canvas.Canvas('eod_template_overlay.pdf')
         pdf.setFont('Courier', 14)
 
@@ -34,18 +34,27 @@ class Handlers():
             total -= H.char_remover(self, data_dict['cash payouts'])
 
         # write cash strings
-        pdf.drawString(153, 577, H.dollar_adder(self, H.char_remover(self, data_dict['cash payouts'])))
-        pdf.drawString(153, 550, H.dollar_adder(self, H.char_remover(self, data_dict['cash aside'])))
-        pdf.drawString(153, 523, H.dollar_adder(self, H.char_remover(self, data_dict['cash 100s'])))
-        pdf.drawString(153, 495, H.dollar_adder(self, H.char_remover(self, data_dict['cash 50s'])))
-        pdf.drawString(153, 467, H.dollar_adder(self, H.char_remover(self, data_dict['cash 20s'])))
-        pdf.drawString(153, 440, H.dollar_adder(self, H.char_remover(self, data_dict['cash 10s'])))
-        pdf.drawString(153, 413, H.dollar_adder(self, H.char_remover(self, data_dict['cash 5s'])))
-        pdf.drawString(153, 385, H.dollar_adder(self, H.char_remover(self, data_dict['cash coins'])))
+        pdf.drawString(153, 577, H.dollar_adder(
+            self, H.char_remover(self, data_dict['cash payouts'])))
+        pdf.drawString(153, 550, H.dollar_adder(
+            self, H.char_remover(self, data_dict['cash aside'])))
+        pdf.drawString(153, 523, H.dollar_adder(
+            self, H.char_remover(self, data_dict['cash 100s'])))
+        pdf.drawString(153, 495, H.dollar_adder(
+            self, H.char_remover(self, data_dict['cash 50s'])))
+        pdf.drawString(153, 467, H.dollar_adder(
+            self, H.char_remover(self, data_dict['cash 20s'])))
+        pdf.drawString(153, 440, H.dollar_adder(
+            self, H.char_remover(self, data_dict['cash 10s'])))
+        pdf.drawString(153, 413, H.dollar_adder(
+            self, H.char_remover(self, data_dict['cash 5s'])))
+        pdf.drawString(153, 385, H.dollar_adder(
+            self, H.char_remover(self, data_dict['cash coins'])))
         pdf.drawString(153, 358, H.dollar_adder(self, total))
-        pdf.drawString(153, 330, H.dollar_adder(self, H.char_remover(self, data_dict['cash register'])))
-        pdf.drawString(153, 303, H.diff_dollar_adder(self, H.calc_diff(self, total, H.char_remover(self, data_dict['cash register']))))
-
+        pdf.drawString(153, 330, H.dollar_adder(
+            self, H.char_remover(self, data_dict['cash register'])))
+        pdf.drawString(153, 303, H.diff_dollar_adder(self, H.calc_diff(
+            self, total, H.char_remover(self, data_dict['cash register']))))
 
         # write lotto strings
         lotto_actual = H.char_remover(self, data_dict['lotto actual'])
@@ -53,8 +62,8 @@ class Handlers():
 
         pdf.drawString(153, 220, H.dollar_adder(self, lotto_actual))
         pdf.drawString(153, 193, H.dollar_adder(self, lotto_register))
-        pdf.drawString(153, 166, H.diff_dollar_adder(self, H.calc_diff(self, lotto_register, lotto_actual)))
-
+        pdf.drawString(153, 166, H.diff_dollar_adder(
+            self, H.calc_diff(self, lotto_register, lotto_actual)))
 
         # write eftpos strings
         eftpos_actual = H.char_remover(self, data_dict['eftpos actual'])
@@ -62,8 +71,8 @@ class Handlers():
 
         pdf.drawString(429, 715, H.dollar_adder(self, eftpos_actual))
         pdf.drawString(429, 688, H.dollar_adder(self, eftpos_register))
-        pdf.drawString(429, 661, H.diff_dollar_adder(self, H.calc_diff(self, eftpos_actual, eftpos_register)))
-
+        pdf.drawString(429, 661, H.diff_dollar_adder(
+            self, H.calc_diff(self, eftpos_actual, eftpos_register)))
 
         # write epay strings
         epay_actual = H.char_remover(self, data_dict['epay actual'])
@@ -71,33 +80,37 @@ class Handlers():
 
         pdf.drawString(429, 577, H.dollar_adder(self, epay_actual))
         pdf.drawString(429, 550, H.dollar_adder(self, epay_register))
-        pdf.drawString(429, 523, H.diff_dollar_adder(self, H.calc_diff(self, epay_register, epay_actual)))
-
+        pdf.drawString(429, 523, H.diff_dollar_adder(
+            self, H.calc_diff(self, epay_register, epay_actual)))
 
         # write scratchie strings
         scratchie_actual = H.char_remover(self, data_dict['scratchies actual'])
-        scratchie_register = H.char_remover(self, data_dict['scratchies register'])
+        scratchie_register = H.char_remover(
+            self, data_dict['scratchies register'])
 
-        pdf.drawString(429, 440, H.diff_dollar_adder(self, H.calc_diff(self, scratchie_actual, scratchie_register)))
-
+        pdf.drawString(429, 440, H.diff_dollar_adder(
+            self, H.calc_diff(self, scratchie_actual, scratchie_register)))
 
         # write scratchie payout strings
-        scratchie_pay_actual = H.char_remover(self, data_dict['scratchies pay actual'])
-        scratchie_pay_register = H.char_remover(self, data_dict['scratchies pay register'])
+        scratchie_pay_actual = H.char_remover(
+            self, data_dict['scratchies pay actual'])
+        scratchie_pay_register = H.char_remover(
+            self, data_dict['scratchies pay register'])
 
         pdf.drawString(429, 358, H.dollar_adder(self, scratchie_pay_actual))
         pdf.drawString(429, 330, H.dollar_adder(self, scratchie_pay_register))
-        pdf.drawString(429, 303, H.diff_dollar_adder(self, H.calc_diff(self, scratchie_pay_actual, scratchie_pay_register)))
-
+        pdf.drawString(429, 303, H.diff_dollar_adder(self, H.calc_diff(
+            self, scratchie_pay_actual, scratchie_pay_register)))
 
         # write lotto payout strings
         lotto_pay_actual = H.char_remover(self, data_dict['lotto pay actual'])
-        lotto_pay_register = H.char_remover(self, data_dict['lotto pay register'])
+        lotto_pay_register = H.char_remover(
+            self, data_dict['lotto pay register'])
 
         pdf.drawString(429, 220, H.dollar_adder(self, lotto_pay_actual))
         pdf.drawString(429, 193, H.dollar_adder(self, lotto_pay_register))
-        pdf.drawString(429, 166, H.diff_dollar_adder(self, H.calc_diff(self, lotto_pay_actual, lotto_pay_register)))
-
+        pdf.drawString(429, 166, H.diff_dollar_adder(
+            self, H.calc_diff(self, lotto_pay_actual, lotto_pay_register)))
 
         # write notes section at the bottom of the page
         text = data_dict['notes']
@@ -114,9 +127,6 @@ class Handlers():
             y_pos += y_offset  # add back offset after last wrapped line
         else:
             pdf.drawString(x_pos, y_pos, text)
-
-
-
 
         pdf.showPage()
         pdf.save()
