@@ -1,0 +1,444 @@
+﻿
+[Header]
+ProjectFileVersion = 1.1
+[General]
+Program name = End of Day
+Program version = 1.0.0
+Windows 2000 = 0
+Windows XP = 1
+Windows Server 2003 = 1
+Windows Vista = 1
+Windows Server 2008 = 1
+Windows 7 = 1
+Windows 8 = 1
+Windows 10 = 1
+Windows Server 2016 = 1
+DoNotCheckOS = 0
+Company name = Nextra Morayfield
+Website = https://
+SFA = 0
+DFA = 0
+Comp = 1
+[Graphics]
+Wizard image = <main>
+Header image = <main>
+Show Label = 1
+VisualStylesEnabled = 1
+[Files]
+Installation path = <ProgramFiles>\<AppName>\
+Autcip = 1
+[Uninstall]
+Vwau = 0
+Website = https://
+Include uninstaller = 1
+Uninstaller filename = Uninstall
+UseCustomDisplayIcon = 0
+CustomDisplayIcon = <InstallPath>\
+[Licence]
+Licence dialog = 0
+[Finish]
+Sart program = 0
+Reboot computer = 0
+Program = <InstallPath>\
+ProgramArguments = 
+[Shortcuts]
+Allowtc = 0
+Shortcut path = <Company>\<AppName>\
+[Serialoptions]
+Allows = 0
+Number = 1000
+Mask = #####-#####-#####-#####
+[SplashScreen]
+Image = 
+Sound = 
+Time = 2
+PlaySound = 0
+Allow = 0
+[Build]
+File = C:\Users\Connor McHugh\Desktop\monextra-eod.exe
+SetupIconPath = ..\icons\ancient.ico
+UninstallIconPath = ..\icons\ancient.ico
+CompressionMethod = 0
+CompressionLevel = 0
+[Updater]
+Allow = 0
+1 = <AppName>
+2 = <AppVersion>
+3 = http://
+4 = http://
+5 = http://
+6 = Update
+Language = 0
+RunProg = 
+RunProgs = 0
+Execdlls = 0
+[Languages]
+1
+[Files/Dirs]
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-file-l1-2-0.dll
+9 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-file-l2-1-0.dll
+9 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-handle-l1-1-0.dll
+9 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-heap-l1-1-0.dll
+9.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-interlocked-l1-1-0.dll
+9 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-libraryloader-l1-1-0.dll
+10 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-localization-l1-2-0.dll
+11.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-memory-l1-1-0.dll
+9.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-namedpipe-l1-1-0.dll
+9 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-processenvironment-l1-1-0.dll
+10 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-processthreads-l1-1-0.dll
+11 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-processthreads-l1-1-1.dll
+9.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-profile-l1-1-0.dll
+8.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-rtlsupport-l1-1-0.dll
+9.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-string-l1-1-0.dll
+9 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-synch-l1-1-0.dll
+11 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-synch-l1-2-0.dll
+9.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-sysinfo-l1-1-0.dll
+10 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-timezone-l1-1-0.dll
+9.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-util-l1-1-0.dll
+9 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-conio-l1-1-0.dll
+10 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-convert-l1-1-0.dll
+13 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-environment-l1-1-0.dll
+9.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-filesystem-l1-1-0.dll
+11 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-heap-l1-1-0.dll
+10 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-locale-l1-1-0.dll
+9.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-math-l1-1-0.dll
+18 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-multibyte-l1-1-0.dll
+17 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-process-l1-1-0.dll
+10 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-runtime-l1-1-0.dll
+13.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-stdio-l1-1-0.dll
+15 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-string-l1-1-0.dll
+15 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-time-l1-1-0.dll
+11.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-crt-utility-l1-1-0.dll
+9.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\base_library.zip
+761.7 KB
+zip
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\d3dcompiler_47.dll
+4.3 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\End of Day.exe
+4.8 MB
+exe
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\End of Day.exe.manifest
+1 KB
+manifest
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\eod_template.pdf
+124.4 KB
+pdf
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\libcrypto-1_1.dll
+3.3 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\libEGL.dll
+23.1 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\libffi-7.dll
+32 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\libGLESv2.dll
+3.2 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\libopenblas.PYQHXLVVQ7VESDPUVUADXEVJOBGHJPAY.gfortran-win_amd64.dll
+31.6 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\libssl-1_1.dll
+678 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\main_window.ui
+22.3 KB
+ui
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\mfc140u.dll
+5.4 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\MSVCP140.dll
+603.8 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\MSVCP140_1.dll
+30.8 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\opengl32sw.dll
+20 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\pyexpat.pyd
+184.6 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\pyside2.abi3.dll
+133.1 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\python3.dll
+57.6 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\python38.dll
+4 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\pythoncom38.dll
+558.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\pywintypes38.dll
+138 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5Core.dll
+5.7 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5DBus.dll
+434.6 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5Gui.dll
+6.8 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5Network.dll
+1.3 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5Pdf.dll
+4.2 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5PrintSupport.dll
+311.1 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5Qml.dll
+3.6 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5QmlModels.dll
+432.6 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5Quick.dll
+4 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5Svg.dll
+322.1 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5VirtualKeyboard.dll
+2 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5WebSockets.dll
+155.6 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5Widgets.dll
+5.3 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Qt5Xml.dll
+208.1 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\select.pyd
+26.1 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\shiboken2.abi3.dll
+227.6 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\tcl86t.dll
+1.6 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\tk86t.dll
+1.4 MB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\ucrtbase.dll
+983.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\unicodedata.pyd
+1 MB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\VCRUNTIME140.dll
+98.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\VCRUNTIME140_1.dll
+43.3 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\win32api.pyd
+129.5 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\win32evtlog.pyd
+72.5 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\win32pdh.pyd
+32.5 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\win32trace.pyd
+21 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\win32ui.pyd
+1.4 MB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\win32wnet.pyd
+35 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\ghostscript
+N/A
+[Folder]
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\Include
+N/A
+[Folder]
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\lib2to3
+N/A
+[Folder]
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\numpy
+N/A
+[Folder]
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\PIL
+N/A
+[Folder]
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\PySide2
+N/A
+[Folder]
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\shiboken2
+N/A
+[Folder]
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\tcl
+N/A
+[Folder]
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\tk
+N/A
+[Folder]
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\win32com
+N/A
+[Folder]
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_asyncio.pyd
+62.1 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_bz2.pyd
+84.1 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_ctypes.pyd
+123.1 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_decimal.pyd
+262.6 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_elementtree.pyd
+173.1 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_hashlib.pyd
+45.1 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_lzma.pyd
+247.1 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_multiprocessing.pyd
+28.6 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_overlapped.pyd
+44.6 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_queue.pyd
+27.6 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_socket.pyd
+77.1 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_ssl.pyd
+150.1 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_testcapi.pyd
+110.1 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_tkinter.pyd
+62.6 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\_win32sysloader.pyd
+11 KB
+pyd
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-console-l1-1-0.dll
+9.5 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-datetime-l1-1-0.dll
+9 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-debug-l1-1-0.dll
+9 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-errorhandling-l1-1-0.dll
+9 KB
+dll
+E:\Users\Connor McHugh\Documents\GitHub\EODGeneratorPySide2\dist\eod\api-ms-win-core-file-l1-1-0.dll
+12.5 KB
+dll
+[Licence_Begin]
+114
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\fs20\par
+}
+ [Licence_End]
+[Registry]
+[Variables]
+[SCs]
+Desktop
+End of Day
+<InstallPath>\End of Day.exe
+
+
+0
+Startmenu
+End of Day
+<InstallPath>\End of Day.exe
+
+
+0
+[IFP_End]
+[Serials]
+[Serials_End]
+[Commands]
